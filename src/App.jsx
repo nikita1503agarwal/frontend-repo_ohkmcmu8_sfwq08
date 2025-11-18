@@ -1,19 +1,17 @@
-import Hero from './components/Hero'
-import Packages from './components/Packages'
-import Contact from './components/Contact'
-import Navbar from './components/Navbar'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import PackagesPage from './pages/PackagesPage'
+import ContactPage from './pages/ContactPage'
+import Test from './Test'
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      <Navbar />
-      <Hero />
-      <Packages />
-      <Contact />
-      <footer className="py-8 border-t border-white/10 text-center text-emerald-100/70">
-        © {new Date().getFullYear()} Zyliah Energy. All rights reserved.
-      </footer>
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/packages" element={<PackagesPage />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/test" element={<Test />} />
+    </Routes>
   )
 }
 
